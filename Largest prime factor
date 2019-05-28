@@ -1,0 +1,32 @@
+*&---------------------------------------------------------------------*
+*& Report YTESTEEULER03
+*&---------------------------------------------------------------------*
+*& Feito por Andrey Contadini Veiga em 28/05/2019
+*&---------------------------------------------------------------------*
+REPORT ytesteeuler03.
+
+DATA: num TYPE int8.
+DATA newnum TYPE int8.
+DATA large-factor TYPE i.
+DATA i TYPE i.
+
+num = 600851475143.
+newnum = num.
+large-factor = 0.
+
+i = 2.
+WHILE ( i * i <= newnum ).
+  IF ( newnum MOD i ) = 0.
+    newnum = newnum / i.
+    large-factor = i.
+  ELSE.
+    i = i + 1.
+  ENDIF.
+
+ENDWHILE.
+IF ( newnum > large-factor ).
+  large-factor = newnum.
+ENDIF.
+
+
+WRITE large-factor.
