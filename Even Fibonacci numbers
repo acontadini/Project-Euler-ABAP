@@ -1,0 +1,26 @@
+*&---------------------------------------------------------------------*
+*& Report YTESTEEULER02
+*&---------------------------------------------------------------------*
+*& Feito por Andrey Contadini Veiga em 28/05/2019
+*&---------------------------------------------------------------------*
+REPORT YTESTEEULER02.
+
+DATA : num1 TYPE i.
+DATA : num2 TYPE i.
+DATA : soma TYPE i.
+DATA : result TYPE i.
+
+num1 = 1.
+num2 = 2.
+soma = 2.
+
+While ( result < 4000000 ).
+  result = num1 + num2.
+  num1 = num2.
+  num2 = result.
+  if ( result MOD 2 ) = 0.
+  soma = soma + result.
+  ENDIF.
+  ENDWHILE.
+
+  WRITE soma.
