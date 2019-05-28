@@ -1,0 +1,33 @@
+*&---------------------------------------------------------------------*
+*& Report YTESTEEULER01
+*&---------------------------------------------------------------------*
+*& Feito por Andrey Contadini Veiga em 28/05/2019
+*&---------------------------------------------------------------------*
+REPORT ytesteeuler01.
+
+DATA: number1 TYPE i.
+DATA: number2 TYPE i.
+DATA: number3 TYPE i.
+DATA: soma   TYPE i.
+soma = 0.
+number1 = 0.
+number2 = 0.
+
+WHILE ( number2 < 1000 ).
+  number1 = number1 + 1.
+  IF ( number2 MOD 5 ) <> 0.
+    soma = number2 + soma.
+  ENDIF.
+  number2 = number1 * 3.
+ENDWHILE.
+
+number1 = 0.
+
+WHILE ( number3 < 1000 ).
+  number1 = number1 + 1.
+  soma = number3 + soma.
+  number3 = number1 * 5.
+ENDWHILE.
+
+
+WRITE soma.
